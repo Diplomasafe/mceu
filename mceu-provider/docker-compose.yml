@@ -1,0 +1,15 @@
+services:
+  mceu-provider:
+    build:
+      context: ${PROVIDER_PATH:-.}/
+      dockerfile: ./docker/main/Dockerfile
+    container_name: mceu_provider
+    volumes:
+      - ${PROVIDER_PATH:-.}:/app:cached
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    ports:
+      - "${PROVIDER_PORT:-3002}:3002"
+    networks:
+      - provider

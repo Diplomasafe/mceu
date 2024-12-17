@@ -1,0 +1,15 @@
+services:
+  mceu-learner:
+    build:
+      context: ${LEARNER_PATH:-.}/
+      dockerfile: ./docker/main/Dockerfile
+    container_name: mceu_learner
+    volumes:
+      - ${LEARNER_PATH:-.}:/app:cached
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    ports:
+      - "${LEARNER_PORT:-3001}:3001"
+    networks:
+      - learner

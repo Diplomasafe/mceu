@@ -1,0 +1,1 @@
+export const EMAIL_TEMPLATE_PATH = Symbol('EMAIL_TEMPLATE_PATH');

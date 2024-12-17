@@ -1,0 +1,22 @@
+services:
+  mceu-api:
+    build:
+      context: ${API_PATH:-.}/
+      dockerfile: ./docker/development/Dockerfile
+    container_name: mceu_api
+    environment:
+      - PORT=${API_PORT}
+    env_file:
+      - ${API_PATH:-.}/.env
+    extra_hosts:
+      - "auth.mceu.int:host-gateway"
+    ports:
+      - "${API_PORT:-3000}:3000"
+    depends_on:
+      - postgres
+    volumes:
+      - ${API_PATH:-.}/:/app:cached
+    networks:
+      - api
+      - provider
+      - learner

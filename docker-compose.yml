@@ -1,0 +1,65 @@
+
+services:
+  mceu_nginx_reverse_proxy:
+    image: nginx:alpine
+    container_name: mceu_nginx_reverse_proxy
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx/nginx-proxy.conf:/etc/nginx/conf.d/nginx-proxy.conf
+      - ./.dev/:/certs
+    depends_on:
+      - mceu-keycloak
+      - mceu-api
+      - mceu-learner
+      - mceu-provider
+    networks:
+      - provider
+      - learner
+
+  postgres:
+    image: postgres:16.4-alpine
+    container_name: postgres
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    networks:
+      - api
+
+  mceu-keycloak:
+    image: keycloak/keycloak:latest
+    container_name: mceu_keycloak
+    command: [ 'start-dev' ]
+    environment:
+      KC_HOSTNAME_URL: http://auth.mceu.int
+      KC_FEATURES: token-exchange,oid4vc-vci
+      KEYCLOAK_ADMIN: ${KEYCLOAK_USERNAME}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_USER_PASSWORD}
+      KC_PROXY_HEADERS: xforwarded
+    ports:
+      - "8080:8080"
+    volumes:
+      - keycloak-data:/opt/keycloak/data:cached
+      - ${KEYCLOAK_PATH:-.}/extensions/keycloak-eidas-idp-0.11.jar:/opt/keycloak/providers/keycloak-eidas-idp-0.11.jar
+    networks:
+      - api
+      - provider
+      - learner
+
+volumes:
+  postgres-data: {}
+  keycloak-data: {}
+
+networks:
+  api:
+    driver: bridge
+  provider: 
+    driver: bridge
+  learner: 
+    driver: bridge
