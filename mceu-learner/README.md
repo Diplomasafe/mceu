@@ -1,39 +1,21 @@
-# learner-spa
+# MCEU Learner SPA 📘
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to the MCEU Learner Single Page Application, a modern Vue.js frontend for the Micro-Credentials platform within the European Union.
 
-## Recommended IDE Setup
+## Overview 🚀
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+The MCEU Learner SPA allows students to:
 
-## Type Support for `.vue` Imports in TS
+- View and manage their micro-credentials.
+- Access course materials and updates.
+- Interact with the platform in a user-friendly interface.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+This application is part of the larger MCEU Micro-Credentials Platform, aiming to enhance the recognition and transparency of micro-credentials across Europe.
 
-## Customize configuration
+## Prerequisites 🔧
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Docker and Docker Compose installed on your machine.
 
-## Project Setup
+## Contributing 🤝
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+We welcome contributions! Please submit a pull request or raise an issue if you encounter any problems.
