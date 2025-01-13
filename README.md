@@ -1,11 +1,11 @@
-
 # MCEU Micro-Credentials Platform 🎓
 
-Welcome to the MCEU Micro-Credentials Platform, a comprehensive solution for managing micro-credentials within the European Union.
+Welcome to the **MCEU Micro-Credentials Platform**, a comprehensive solution for managing micro-credentials within the European Union.
 
 ## Overview 🚀
 
-MCEU Platform is a comprehensive credential management system for issuing and managing Verifiable Credentials (VCs) in the hospitality industry. The platform consists of multiple Vue.js frontends and a Nest.js backend.
+MCEU Platform is a comprehensive credential management system for issuing and managing Verifiable Credentials (VCs) in the hospitality industry.
+The platform consists of two Vue.js frontends and a Nest.js backend.
 
 ## Features 🔧
 
@@ -19,6 +19,7 @@ MCEU Platform is a comprehensive credential management system for issuing and ma
 ## Architecture 🏗️
 
 The platform consists of three main components:
+
 - `mceu-api`: Nest.js backend service
 - `mceu-learner`: Vue.js frontend for students
 - `mceu-provider`: Vue.js frontend for VET providers
@@ -26,6 +27,7 @@ The platform consists of three main components:
 ## Quick Start 🚀
 
 ### Prerequisites
+
 - Docker
 - Docker Compose
 - Node.js (recommended)
@@ -33,13 +35,13 @@ The platform consists of three main components:
 ### Installation
 
 Clone the repository and navigate to the project directory.
-```
-```bash 
-git clone https://github.com/Diplomasafe/mceu.git .
 
+```bash
+git clone https://github.com/Diplomasafe/mceu.git
 ```
 
 #### Environment Setup
+
 For the API service, Provider Portal, and Learner Portal, you need to create .env files based on the provided .env.example files.
 Navigate to each directory and create the .env files:
 
@@ -60,6 +62,7 @@ docker compose -f docker-compose.yml \
 - **Containerization**: Docker
 - **Authentication**: JWT, DID
 - **Standards Compliance**: EBSI, EDC
+
 ## Security 🔒
 
 - Secure credential storage
@@ -70,6 +73,7 @@ docker compose -f docker-compose.yml \
 ## Support 💬
 
 For support and training:
+
 - Submit support tickets through the platform
 - Access training sessions for VET providers
 - Contact Diplomasafe support team
@@ -79,4 +83,5 @@ For support and training:
 This project is licensed under the MIT License.
 
 ## Contact 🤝
+
 For more information, visit Diplomasafe:

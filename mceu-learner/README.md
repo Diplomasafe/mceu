@@ -1,10 +1,10 @@
 # MCEU Learner SPA 📘
 
-Welcome to the MCEU Learner Single Page Application, a modern Vue.js frontend for the Micro-Credentials platform within the European Union.
+Welcome to the **MCEU Learner Single Page Application**, a modern Vue.js frontend for the Micro-Credentials platform within the European Union.
 
 ## Overview 🚀
 
-The MCEU Learner SPA allows students to:
+The **MCEU Learner SPA** allows students to:
 
 - View and manage their micro-credentials.
 - Access course materials and updates.
@@ -14,7 +14,7 @@ This application is part of the larger MCEU Micro-Credentials Platform, aiming t
 
 ## Prerequisites 🔧
 
-Docker and Docker Compose installed on your machine.
+**Docker** and **Docker** Compose installed on your machine.
 
 ## Contributing 🤝
 
