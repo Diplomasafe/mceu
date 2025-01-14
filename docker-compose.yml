@@ -33,19 +33,23 @@ services:
       - api
 
   mceu-keycloak:
-    image: keycloak/keycloak:latest
+    image: keycloak/keycloak:26.0
     container_name: mceu_keycloak
-    command: [ 'start-dev' ]
+    command: start-dev --import-realm
     environment:
       KC_HOSTNAME_URL: http://auth.mceu.int
-      KC_FEATURES: token-exchange,oid4vc-vci
+      KC_FEATURES: token-exchange,dpop
       KEYCLOAK_ADMIN: ${KEYCLOAK_USERNAME}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_USER_PASSWORD}
       KC_PROXY_HEADERS: xforwarded
+      KC_SPI_REALM_RESTAPI_EXTENSION_AUTHORISATION_SERVER_ISSUER_URL: ${KC_SPI_REALM_RESTAPI_EXTENSION_AUTHORISATION_SERVER_ISSUER_URL}
+      KC_SPI_REALM_RESTAPI_EXTENSION_AUTHORISATION_SERVER_CLIENT_ID: ${KC_SPI_REALM_RESTAPI_EXTENSION_AUTHORISATION_SERVER_CLIENT_ID} 
+      KC_SPI_REALM_RESTAPI_EXTENSION_AUTHORISATION_SERVER_CLIENT_SECRET: ${KC_SPI_REALM_RESTAPI_EXTENSION_AUTHORISATION_SERVER_CLIENT_SECRET}
     ports:
       - "8080:8080"
     volumes:
       - keycloak-data:/opt/keycloak/data:cached
+      - ${KEYCLOAK_PATH:-.}/import:/opt/keycloak/data/import
       - ${KEYCLOAK_PATH:-.}/extensions/keycloak-eidas-idp-0.11.jar:/opt/keycloak/providers/keycloak-eidas-idp-0.11.jar
     networks:
       - api

@@ -78,7 +78,7 @@ For support and training:
 - Access training sessions for VET providers
 - Contact Diplomasafe support team
 
-## License⚖️📝
+## License 📝
 
 This project is licensed under the MIT License.
 
