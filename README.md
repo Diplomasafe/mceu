@@ -42,8 +42,7 @@ git clone https://github.com/Diplomasafe/mceu.git
 
 #### Environment Setup
 
-For the API service, Provider Portal, and Learner Portal, you need to create .env files based on the provided .env.example files and setup the [Keycloak SMTP setup](https://www.keycloak.org/docs/latest/server_admin/#_email) for the realm
-Navigate to each directory and create the .env files:
+For the API service, Provider Portal, and Learner Portal, you need to create .env files based on the provided .env.example files.
 
 Run all services using Docker Compose:
 
@@ -56,7 +55,10 @@ docker compose -f docker-compose.yml \
               up --build -d
 ```
 
-The default provider user is
+Setup the [Keycloak SMTP setup](https://www.keycloak.org/docs/latest/server_admin/#_email) for the MCEU realm.
+
+### Provider Provider default account
+The default provider user
 
 ```code
 email: provider@mceu.int
