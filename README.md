@@ -51,11 +51,10 @@ docker compose -f docker-compose.yml \
               -f mceu-api/docker-compose.yml \
               -f mceu-learner/docker-compose.yml \
               -f mceu-provider/docker-compose.yml \
-
               up --build -d
 ```
 
-Setup the [Keycloak SMTP setup](https://www.keycloak.org/docs/latest/server_admin/#_email) for the MCEU realm.
+Setup the [Keycloak SMTP](https://www.keycloak.org/docs/latest/server_admin/#_email) for the MCEU realm.
 
 ### Provider Provider default account
 The default provider user
