@@ -79,15 +79,9 @@
         "description": "${role_default-roles}",
         "composite": true,
         "composites": {
-          "realm": [
-            "offline_access",
-            "uma_authorization"
-          ],
+          "realm": ["offline_access", "uma_authorization"],
           "client": {
-            "account": [
-              "view-profile",
-              "manage-account"
-            ]
+            "account": ["view-profile", "manage-account"]
           }
         },
         "clientRole": false,
@@ -113,10 +107,7 @@
           "composite": true,
           "composites": {
             "client": {
-              "realm-management": [
-                "query-groups",
-                "query-users"
-              ]
+              "realm-management": ["query-groups", "query-users"]
             }
           },
           "clientRole": true,
@@ -202,9 +193,7 @@
           "composite": true,
           "composites": {
             "client": {
-              "realm-management": [
-                "query-clients"
-              ]
+              "realm-management": ["query-clients"]
             }
           },
           "clientRole": true,
@@ -361,9 +350,7 @@
           "composite": true,
           "composites": {
             "client": {
-              "account": [
-                "view-consent"
-              ]
+              "account": ["view-consent"]
             }
           },
           "clientRole": true,
@@ -422,9 +409,7 @@
           "composite": true,
           "composites": {
             "client": {
-              "account": [
-                "manage-account-links"
-              ]
+              "account": ["manage-account-links"]
             }
           },
           "clientRole": true,
@@ -443,9 +428,7 @@
     "clientRole": false,
     "containerId": "92581809-319d-4af0-8aae-6e7e7aec452e"
   },
-  "requiredCredentials": [
-    "password"
-  ],
+  "requiredCredentials": ["password"],
   "otpPolicyType": "totp",
   "otpPolicyAlgorithm": "HmacSHA1",
   "otpPolicyInitialCounter": 0,
@@ -460,10 +443,7 @@
   ],
   "localizationTexts": {},
   "webAuthnPolicyRpEntityName": "keycloak",
-  "webAuthnPolicySignatureAlgorithms": [
-    "ES256",
-    "RS256"
-  ],
+  "webAuthnPolicySignatureAlgorithms": ["ES256", "RS256"],
   "webAuthnPolicyRpId": "",
   "webAuthnPolicyAttestationConveyancePreference": "not specified",
   "webAuthnPolicyAuthenticatorAttachment": "not specified",
@@ -474,10 +454,7 @@
   "webAuthnPolicyAcceptableAaguids": [],
   "webAuthnPolicyExtraOrigins": [],
   "webAuthnPolicyPasswordlessRpEntityName": "keycloak",
-  "webAuthnPolicyPasswordlessSignatureAlgorithms": [
-    "ES256",
-    "RS256"
-  ],
+  "webAuthnPolicyPasswordlessSignatureAlgorithms": ["ES256", "RS256"],
   "webAuthnPolicyPasswordlessRpId": "",
   "webAuthnPolicyPasswordlessAttestationConveyancePreference": "not specified",
   "webAuthnPolicyPasswordlessAuthenticatorAttachment": "not specified",
@@ -498,19 +475,35 @@
       "serviceAccountClientId": "mceu-api",
       "disableableCredentialTypes": [],
       "requiredActions": [],
-      "realmRoles": [
-        "default-roles-mceu"
-      ],
+      "realmRoles": ["default-roles-mceu"],
       "clientRoles": {
-        "realm-management": [
-          "impersonation",
-          "manage-users",
-          "manage-realm"
-        ],
-        "mceu-api": [
-          "uma_protection"
-        ]
+        "realm-management": ["impersonation", "manage-users", "manage-realm"],
+        "mceu-api": ["uma_protection"]
       },
+      "notBefore": 0,
+      "groups": []
+    },
+    {
+      "id": "2693f9fa-fe6e-4cda-b15b-9bc63f187bc8",
+      "username": "provider",
+      "email": "provider@mceu.int",
+      "emailVerified": true,
+      "createdTimestamp": 1734434432368,
+      "enabled": true,
+      "totp": false,
+      "disableableCredentialTypes": [],
+      "requiredActions": [],
+      "realmRoles": ["provider", "default-roles-mceu"],
+      "clientRoles": {
+        "realm-management": ["impersonation", "manage-users", "manage-realm"],
+        "mceu-api": ["uma_protection"]
+      },
+      "credentials": [
+        {
+          "type": "password",
+          "value": "$ecurePa33"
+        }
+      ],
       "notBefore": 0,
       "groups": []
     }
@@ -518,19 +511,14 @@
   "scopeMappings": [
     {
       "clientScope": "offline_access",
-      "roles": [
-        "offline_access"
-      ]
+      "roles": ["offline_access"]
     }
   ],
   "clientScopeMappings": {
     "account": [
       {
         "client": "account-console",
-        "roles": [
-          "manage-account",
-          "view-groups"
-        ]
+        "roles": ["manage-account", "view-groups"]
       }
     ]
   },
@@ -545,9 +533,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "redirectUris": [
-        "/realms/mceu/account/*"
-      ],
+      "redirectUris": ["/realms/mceu/account/*"],
       "webOrigins": [],
       "notBefore": 0,
       "bearerOnly": false,
@@ -592,9 +578,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "redirectUris": [
-        "/realms/mceu/account/*"
-      ],
+      "redirectUris": ["/realms/mceu/account/*"],
       "webOrigins": [],
       "notBefore": 0,
       "bearerOnly": false,
@@ -737,10 +721,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "redirectUris": [
-        "openid:*",
-        "*"
-      ],
+      "redirectUris": ["openid:*", "*"],
       "webOrigins": [],
       "notBefore": 0,
       "bearerOnly": false,
@@ -793,20 +774,16 @@
       "clientId": "mceu-api",
       "name": "API",
       "description": "",
-      "rootUrl": "https://stage-ds-api-wallet.diplomasafe.net",
-      "adminUrl": "https://stage-ds-api-wallet.diplomasafe.net",
-      "baseUrl": "https://stage-ds-api-wallet.diplomasafe.net",
+      "rootUrl": "http://api.mceu.int",
+      "adminUrl": "http://api.mceu.int",
+      "baseUrl": "http://api.mceu.int",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
-      "redirectUris": [
-        "https://stage-ds-api-wallet.diplomasafe.net/*"
-      ],
-      "webOrigins": [
-        "https://stage-ds-api-wallet.diplomasafe.net"
-      ],
+      "redirectUris": ["http://api.mceu.int/*"],
+      "webOrigins": ["http://api.mceu.int"],
       "notBefore": 0,
       "bearerOnly": false,
       "consentRequired": false,
@@ -823,7 +800,7 @@
         "oidc.ciba.grant.enabled": "false",
         "client.secret.creation.time": "1734432383",
         "backchannel.logout.session.required": "true",
-        "post.logout.redirect.uris": "https://stage-ds-api-wallet.diplomasafe.net/*",
+        "post.logout.redirect.uris": "http://api.mceu.int/*",
         "oauth2.device.authorization.grant.enabled": "false",
         "display.on.consent.screen": "false",
         "backchannel.logout.revoke.offline.tokens": "false"
@@ -899,19 +876,15 @@
       "clientId": "mceu-learner",
       "name": "",
       "description": "",
-      "rootUrl": "https://stage-ds-learner-wallet.diplomasafe.net",
-      "adminUrl": "https://stage-ds-learner-wallet.diplomasafe.net",
-      "baseUrl": "https://stage-ds-learner-wallet.diplomasafe.net",
+      "rootUrl": "http://learner.mceu.int",
+      "adminUrl": "http://learner.mceu.int",
+      "baseUrl": "http://learner.mceu.int",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "redirectUris": [
-        "https://stage-ds-learner-wallet.diplomasafe.net/*"
-      ],
-      "webOrigins": [
-        "https://stage-ds-learner-wallet.diplomasafe.net"
-      ],
+      "redirectUris": ["http://learner.mceu.int/*"],
+      "webOrigins": ["http://learner.mceu.int"],
       "notBefore": 0,
       "bearerOnly": false,
       "consentRequired": false,
@@ -924,7 +897,7 @@
       "protocol": "openid-connect",
       "attributes": {
         "client.introspection.response.allow.jwt.claim.enabled": "false",
-        "post.logout.redirect.uris": "https://stage-ds-learner-wallet.diplomasafe.net/*",
+        "post.logout.redirect.uris": "http://learner.mceu.int",
         "oauth2.device.authorization.grant.enabled": "false",
         "backchannel.logout.revoke.offline.tokens": "false",
         "use.refresh.tokens": "true",
@@ -966,19 +939,15 @@
       "clientId": "mceu-provider",
       "name": "",
       "description": "",
-      "rootUrl": "https://stage-ds-provider-wallet.diplomasafe.net",
-      "adminUrl": "https://stage-ds-provider-wallet.diplomasafe.net",
-      "baseUrl": "https://stage-ds-provider-wallet.diplomasafe.net",
+      "rootUrl": "http://provider.mceu.int",
+      "adminUrl": "http://provider.mceu.int",
+      "baseUrl": "http://provider.mceu.int",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "redirectUris": [
-        "https://stage-ds-provider-wallet.diplomasafe.net/*"
-      ],
-      "webOrigins": [
-        "https://stage-ds-provider-wallet.diplomasafe.net"
-      ],
+      "redirectUris": ["http://provider.mceu.int/*"],
+      "webOrigins": ["http://provider.mceu.int"],
       "notBefore": 0,
       "bearerOnly": false,
       "consentRequired": false,
@@ -991,7 +960,7 @@
       "protocol": "openid-connect",
       "attributes": {
         "client.introspection.response.allow.jwt.claim.enabled": "false",
-        "post.logout.redirect.uris": "https://stage-ds-provider-wallet.diplomasafe.net/*",
+        "post.logout.redirect.uris": "http://provider.mceu.int/*",
         "oauth2.device.authorization.grant.enabled": "false",
         "backchannel.logout.revoke.offline.tokens": "false",
         "use.refresh.tokens": "true",
@@ -1080,12 +1049,8 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "redirectUris": [
-        "/admin/mceu/console/*"
-      ],
-      "webOrigins": [
-        "+"
-      ],
+      "redirectUris": ["/admin/mceu/console/*"],
+      "webOrigins": ["+"],
       "notBefore": 0,
       "bearerOnly": false,
       "consentRequired": false,
@@ -1860,9 +1825,7 @@
   },
   "smtpServer": {},
   "eventsEnabled": false,
-  "eventsListeners": [
-    "jboss-logging"
-  ],
+  "eventsListeners": ["jboss-logging"],
   "enabledEventTypes": [],
   "adminEventsEnabled": false,
   "adminEventsDetailsEnabled": false,
@@ -1915,12 +1878,8 @@
         "subType": "anonymous",
         "subComponents": {},
         "config": {
-          "host-sending-registration-request-must-match": [
-            "true"
-          ],
-          "client-uris-must-match": [
-            "true"
-          ]
+          "host-sending-registration-request-must-match": ["true"],
+          "client-uris-must-match": ["true"]
         }
       },
       {
@@ -1938,9 +1897,7 @@
         "subType": "anonymous",
         "subComponents": {},
         "config": {
-          "allow-default-scopes": [
-            "true"
-          ]
+          "allow-default-scopes": ["true"]
         }
       },
       {
@@ -1958,9 +1915,7 @@
         "subType": "anonymous",
         "subComponents": {},
         "config": {
-          "max-clients": [
-            "200"
-          ]
+          "max-clients": ["200"]
         }
       },
       {
@@ -1970,9 +1925,7 @@
         "subType": "authenticated",
         "subComponents": {},
         "config": {
-          "allow-default-scopes": [
-            "true"
-          ]
+          "allow-default-scopes": ["true"]
         }
       }
     ],
@@ -1995,12 +1948,8 @@
         "providerId": "rsa-enc-generated",
         "subComponents": {},
         "config": {
-          "priority": [
-            "100"
-          ],
-          "algorithm": [
-            "RSA-OAEP"
-          ]
+          "priority": ["100"],
+          "algorithm": ["RSA-OAEP"]
         }
       },
       {
@@ -2009,9 +1958,7 @@
         "providerId": "aes-generated",
         "subComponents": {},
         "config": {
-          "priority": [
-            "100"
-          ]
+          "priority": ["100"]
         }
       },
       {
@@ -2020,12 +1967,8 @@
         "providerId": "hmac-generated",
         "subComponents": {},
         "config": {
-          "priority": [
-            "100"
-          ],
-          "algorithm": [
-            "HS512"
-          ]
+          "priority": ["100"],
+          "algorithm": ["HS512"]
         }
       },
       {
@@ -2034,9 +1977,7 @@
         "providerId": "rsa-generated",
         "subComponents": {},
         "config": {
-          "priority": [
-            "100"
-          ]
+          "priority": ["100"]
         }
       }
     ]
