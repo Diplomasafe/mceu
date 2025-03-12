@@ -9,7 +9,7 @@ The platform consists of two Vue.js frontends and a Nest.js backend.
 
 ## Features 🔧
 
-- **Learner Portal** 🧑‍🎓: A Vue.js application for learners to view and manage their micro-credentials.
+- **Learner Portal** 🧑🎓: A Vue.js application for learners to view and manage their micro-credentials.
 - **Provider Portal** 🏫: A Vue.js application for education and training providers to issue and manage micro-credentials.
 - **API Service** 🌐: A Nest.js application providing RESTful API endpoints for the platform.
 - **Integration with European Blockchain Services Infrastructure (EBSI)** 🔒: Leveraging blockchain technology for secure and verifiable credentials.
@@ -55,6 +55,15 @@ docker compose -f docker-compose.yml \
 ```
 
 Setup the [Keycloak SMTP](https://www.keycloak.org/docs/latest/server_admin/#_email) for the MCEU realm.
+
+### For development you need to add additional configuration in the Host in the environment
+
+```bash
+127.0.0.1 auth.mceu.int
+127.0.0.1 api.mceu.int
+127.0.0.1 learner.mceu.int
+127.0.0.1 provider.mceu.int
+```
 
 ### Provider Provider default account
 The default provider user

@@ -12,6 +12,14 @@ The **MCEU API Service** serves as the backbone of the MCEU Micro-Credentials Pl
 
 This application is essential for the functionality of the MCEU Learner and Provider SPAs, facilitating secure and efficient data transactions.
 
+## Swagger Documentation 📖
+
+The **MCEU API Service** provides a Swagger documentation interface for easy access to the API endpoints. To access the Swagger documentation, navigate to the following URL:
+
+```bash
+GET /documentation
+```
+
 ## Getting Started 🛠️
 
 ### Database Setup
@@ -32,7 +40,7 @@ After starting the Docker container, execute the **MikroORM migrations** to set 
 docker exec -it <container_name_or_id> sh
 
 # Inside the container, run migrations
-npx mikro-orm migration:up 
+npx mikro-orm migration:up
 ```
 
 ### Prerequisites
